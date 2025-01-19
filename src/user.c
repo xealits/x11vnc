@@ -455,7 +455,7 @@ static int lurk(char **users) {
 
 	lind = 0;
 	while (list[lind] != NULL) {
-		char *user, *name, *home, dpystr[10];
+		char *user, *name, *home, dpystr[16];
 		char *q, *t;
 		int ok = 1, dn;
 
