@@ -147,4 +147,10 @@ include_directories( ${CMAKE_SOURCE_DIR}/ ) # the directory with config.h
 # Since we have created a config.h add a global define for it
 add_definitions( "-DHAVE_CONFIG_H" )
 add_subdirectory( src )
-add_subdirectory( misc )
+#add_subdirectory( misc ) # let's skip because it cannot find rfb.h
+# misc/turbovnc/tight.c:32:10: fatal error: rfb.h: No such file or directory
+#    32 | #include "rfb.h"
+#       |          ^~~~~~~
+# it is here: /usr/include/rfb/rfb.h
+# and src/x11vnc.h includes it like this:
+# #include <rfb/rfb.h>

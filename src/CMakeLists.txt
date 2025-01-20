@@ -127,12 +127,23 @@ target_link_libraries( x11vnc
 	ssl
 	drm
 	crypt
+	crypto
 	# they test no_x - if yes, #define X_DISPLAY_MISSING 1
 	# if no (i.e. X is there?)
 	# test -n "$x_includes" then X_CFLAGS="$X_CFLAGS -I$x_includes"
 	# test -n "$x_libraries"; then X_LIBS="$X_LIBS -L$x_libraries"
 	# i.e. these are user inputs?
+	#X11
+	# copies from the autotools make V=1 or make -n
+	Xtst
+	Xext
+	Xinerama
+	Xrandr
+	Xfixes
+	Xcursor
 	X11
+	Xi
+
 	# there is also a user variable with_avahi?
 	# which must contain the directory path to avahi:
 	# AVAHI_CFLAGS="-I$with_avahi/include"
